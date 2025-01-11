@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMANAR MAROUANE - Développeur Full Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Existing styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-gray: #f5f6fa;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 21cm;
+            /* A4 width */
+            margin: 0 auto;
+            padding: 0;
+            background: white;
+            box-shadow: none;
+            /* Remove shadow for print */
+            border-radius: 0;
+            /* Remove border radius for print */
+        }
+
+        .header {
+            padding: 2cm 1.5cm;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 0;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header h2 {
+            font-size: 18pt;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            font-size: 10pt;
+            margin-top: 1rem;
+        }
+
+        .section {
+            padding: 1.5cm 1.5cm;
+            border-bottom: 1px solid var(--border-color);
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: var(--border-color);
+            margin-left: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: var(--light-gray);
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 11pt;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 10pt;
+            box-shadow: none;
+        }
+
+        .education-item,
+        .project-item {
+            margin-bottom: 1.5rem;
+            page-break-inside: avoid;
+        }
+
+        .education-item h3,
+        .project-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+            font-size: 12pt;
+        }
+
+        .date {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            font-size: 10pt;
+        }
+
+        .project-tech {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 9pt;
+        }
+
+        /* Print-specific styles */
+        @page {
+            size: A4;
+            margin: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                width: 21cm;
+                min-height: 29.7cm;
+            }
+
+            .header {
+                background-color: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .tech-tag {
+                background-color: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .skill-category {
+                background-color: var(--light-gray) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .project-item,
+            .education-item {
+                page-break-inside: avoid;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AMANAR MAROUANE</h1>
+            <h2>DÉVELOPPEUR FULL STACK</h2>
+            <div class="contact-info">
+                <span>📍 Nador Orienté</span>
+                <span>📧 marouane.amanar.07@gmail.com</span>
+                <span>📱 +212644311735</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">PROFILE</h2>
+            <p>Développeur Full Stack junior passionné par les technologies web modernes, actuellement en formation à
+                UM6P YouCode. Maîtrisant un éventail de technologies incluant JavaScript, PHP, et les frameworks
+                associés, je combine des compétences techniques solides en développement frontend et backend avec une
+                expertise particulière en sécurité web et bases de données. Mon expérience inclut la création
+                d'applications web complètes, de la conception à l'implémentation, en utilisant des architectures MVC et
+                des pratiques de programmation orientée objet. Fortement axé sur la qualité du code et l'innovation, je
+                suis constamment à la recherche de nouveaux défis pour approfondir mes connaissances et créer des
+                solutions web performantes et sécurisées.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">COMPÉTENCES</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Développement Web</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">JavaScript/jQuery</span>
+                        <span class="skill-item">PHP/Laravel</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Base de données</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">MariaDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Outils & Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">JIRA</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">PROJETS</h2>
+            <div class="project-item">
+                <h3>Task Flow</h3>
+                <p>Développement d'une plateforme web de gestion des tâches.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">PHP/MVC</span>
+                    <span class="tech-tag">POO</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3>Quiz Game</h3>
+                <p>Développement d'un quiz interactif avec calcul de score en temps réel.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">JSON</span>
+                    <span class="tech-tag">DOM</span>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3>Système de Gestion des Réclamations</h3>
+                <p>Création d'un programme en C permettant de gérer les comptes utilisateurs, les plaintes et leur
+                    suivi.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Langage de programmation C</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">FORMATION</h2>
+            <div class="education-item">
+                <h3>YouCode - UM6P</h3>
+                <div class="date">2024 - 2026 (en cours)</div>
+                <p>Formation Développeur Full Stack</p>
+            </div>
+            <div class="education-item">
+                <h3>Omar el khiyam</h3>
+                <div class="date">2023 - 2024</div>
+                <p>Titulaire d'un baccalauréat</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
