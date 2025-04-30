@@ -27,19 +27,25 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+            /* height: 100vh; */
+            /* overflow: hidden; */
         }
 
         .container {
-            max-width: 21cm;
+            width: 21cm;
+            /* height: 100vh; */
             margin: 0 auto;
             padding: 0;
             background: white;
             box-shadow: none;
             border-radius: 0;
+            /* overflow-y: auto; */
         }
 
         .header {
-            padding: .5em 1.5em;
+            padding: 0.5em 1.5em;
             background: #fff;
             color: white;
             border-radius: 0;
@@ -65,7 +71,7 @@
         .contact-info {
             display: flex;
             font-size: 10pt;
-            margin-top: .5rem;
+            margin-top: .2rem;
         }
 
         .social-links {
@@ -86,10 +92,10 @@
         }
 
         .section {
-            padding: 1.5em;
+            padding: 0.5em 1.5em;
             page-break-inside: avoid;
             padding-bottom: 0;
-            padding-top: 1em;
+            padding-top: 0.8em;
         }
 
         .section-title {
@@ -108,8 +114,6 @@
             background: var(--border-color);
             margin-left: 1rem;
         }
-
-        .skills-grid {}
 
         .skill-category {
             background: var(--light-gray);
@@ -211,37 +215,47 @@
             print-color-adjust: exact;
         }
 
-        /* @media print {
+        @media print {
             body {
                 margin: 0;
                 padding: 0;
+                background: white;
+                /* height: 100vh; */
+                /* overflow: hidden; */
             }
 
             .container {
                 width: 21cm;
-                min-height: 29.7cm;
+                /* height: 100vh; */
                 margin: 0;
-                padding: 1cm;
+                padding: 0;
+                box-shadow: none;
+                /* overflow: hidden; */
             }
 
             .header {
-                padding: 1cm;
+                padding: 0.5em 1.5em;
             }
 
             .section {
-                padding: 1cm;
+                padding: 0.3em 1.5em;
             }
 
             .section-title {
-                margin-bottom: 0.5cm;
+                margin-bottom: 0.3em;
             }
 
             .contact-info,
             .skills-grid {
-                gap: 1rem;
+                gap: 0.5rem;
             }
-        }*/
+
+            .section:last-child {
+                page-break-after: avoid;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -250,8 +264,8 @@
             <div style="display: flex; align-items: flex-start;">
                 <div
                     style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; column-gap: 1em;">
-                    <img src="./DSC_0614-1.JPG" alt="Marouane Amanar"
-                        style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid white; transform: translateX(5em);">
+                    <img src="./DSC_0614-1.JPG"
+                        style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid white; transform: translateX(3em);">
                     <div style="width: 80%;">
                         <h1 style="margin: 0;">AMANAR MAROUANE</h1>
                         <h2 style="margin: 0;">DÉVELOPPEUR FULL STACK</h2>
@@ -282,9 +296,7 @@
         <section class="section">
             <h2 class="section-title">PROFIL</h2>
             <p>
-                Développeur Full Stack junior passionné par les technologies web modernes, en formation à UM6P YouCode.
-                Toujours motivé par l'apprentissage, j'ai l'expérience pour créer des applications optimisées, modernes
-                et sécurisées..
+                Développeur Full Stack Junior à UM6P YouCode, spécialisé dans les technologies web modernes et la création d'applications réactives et sécurisées.
             </p>
         </section>
 
@@ -294,9 +306,11 @@
                 <div class="skill-category">
                     <h3>Développement Web</h3>
                     <div class="skill-list">
-                        <span class="skill-item">HTML/CSS</span>
                         <span class="skill-item">JavaScript/jQuery/Alpine.js</span>
+                        <span class="skill-item">React.js</span>
                         <span class="skill-item">PHP/Laravel</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -309,16 +323,15 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Base de données</h3>
+                    <h3>Bases de Données</h3>
                     <div class="skill-list">
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">MariaDB</span>
+                        <span class="skill-item">MySQL/MariaDB</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Design Patterns & Architectural Models</h3>
+                    <h3>Design Patterns</h3>
                     <div class="skill-list">
-                        <span class="skill-item">OOP</span>
+                        <span class="skill-item">POO</span>
                         <span class="skill-item">MVC</span>
                     </div>
                 </div>
@@ -330,16 +343,18 @@
             <div class="project-item">
                 <div class="titleInLineWithSkills">
                     <a style="text-decoration: none;" href="https://github.com/Amanar-Marouane/YouCommunity">
-                        <h3>Community Event Planner</h3>
+                        <h3>Planificateur d'Événements Communautaires</h3>
                     </a>
                 </div>
                 <p>
-                    Plateforme web développée avec <span style="font-weight: bolder;">Laravel 11</span>, <span
-                        style="font-weight: bolder;">MySQL</span>, <span style="font-weight: bolder;">Blade</span> et
-                    <span style="font-weight: bolder;">Tailwind CSS</span> pour la création et la
-                    gestion d'événements locaux. Optimisée avec <span style="font-weight: bolder;">Eloquent ORM</span>,
-                    <span style="font-weight: bolder;">middleware</span>, <span style="font-weight: bolder;">cache
-                        et outils de test</span>.
+                    Plateforme <span style="font-weight: bolder;">Laravel 11</span> pour la gestion d'événements locaux
+                    avec
+                    <span style="font-weight: bolder;">MySQL</span>, <span style="font-weight: bolder;">Blade</span>,
+                    et <span style="font-weight: bolder;">Tailwind CSS</span>. Fonctionnalités incluant
+                    <span style="font-weight: bolder;">Eloquent ORM</span>,
+                    <span style="font-weight: bolder;">middleware</span>,
+                    <span style="font-weight: bolder;">mise en cache</span>, et
+                    <span style="font-weight: bolder;">tests</span>.
                 </p>
             </div>
             <div class="project-item">
@@ -348,27 +363,41 @@
                         <h3>RoomMate YouCode</h3>
                     </a>
                 </div>
-                <p>Plateforme permettant aux étudiants de YouCode de trouver des colocataires et des logements.
-                    Développée avec <span style="font-weight: bolder;">PHP</span> (<span
-                        style="font-weight: bolder;">POO</span>, <span style="font-weight: bolder;">PDO</span>, <span
-                        style="font-weight: bolder;">MVC</span>) et <span style="font-weight: bolder;">MySQL</span>,
-                    Design responsive pour l'accessibilité.</p>
+                <p>
+                    Plateforme <span style="font-weight: bolder;">PHP</span> permettant aux étudiants de YouCode de
+                    trouver des colocataires et
+                    des logements. Construite avec <span style="font-weight: bolder;">POO</span>,
+                    <span style="font-weight: bolder;">PDO</span>,
+                    <span style="font-weight: bolder;">MVC</span>, et
+                    <span style="font-weight: bolder;">MySQL</span>.
+                </p>
             </div>
             <div class="project-item">
                 <div class="titleInLineWithSkills">
-                    <a style="text-decoration: none;" href="https://github.com/Amanar-Marouane/Youdemy">
-                        <h3>Youdemy</h3>
+                    <a style="text-decoration: none;" href="https://github.com/Amanar-Marouane/NearTrade">
+                        <h3>NearTrade</h3>
                     </a>
                 </div>
-                <p>Plateforme de cours en ligne développée avec <span style="font-weight: bolder;">PHP</span>, <span
-                        style="font-weight: bolder;">MySQL</span>, <span style="font-weight: bolder;">HTML5</span>,
-                    <span style="font-weight: bolder;">CSS3</span>, <span style="font-weight: bolder;">JavaScript</span>
-                    et <span style="font-weight: bolder;">MVC</span>. Permet aux
-                    enseignants de créer et gérer des cours, et aux étudiants de s'inscrire et suivre leur progression.
+                <p>
+                    Marketplace locale développée avec <span style="font-weight: bolder;">Laravel</span>,
+                    <span style="font-weight: bolder;">React.js</span>, et
+                    <span style="font-weight: bolder;">MariaDB</span>.
+                    Fonctionnalités incluant la messagerie en temps réel et la négociation de transactions.
                 </p>
             </div>
         </section>
-
+        <section class="section">
+            <h2 class="section-title">EXPÉRIENCES</h2>
+            <div class="education-item">
+                <div>
+                    <h3>Développeur Full Stack – Stage de Fin d'Année</h3>
+                    <p>
+                        Tarmiz – Tanger, Maroc. (Laravel, React, Tailwinds)
+                    </p>
+                </div>
+                <div class="date">Mai – Août 2025 (en cours)</div>
+            </div>
+        </section>
         <section class="section">
             <h2 class="section-title">FORMATION</h2>
             <div class="education-item">
@@ -386,11 +415,11 @@
                 <div class="date">2023 - 2024</div>
             </div>
         </section>
-        <div class="section" style="padding-bottom: 1em;">
-            <div class="section-title">Langues</div>
+        <section class="section" style="padding-bottom: 1em;">
+            <div class="section-title">LANGUES</div>
             <ul style="list-style: none; padding: 0; margin: 0;color: #333; display: flex; gap: 2em;">
                 <li>
-                    <strong style="color: #3498db;">Arabic:</strong> Langue Maternelle
+                    <strong style="color: #3498db;">Arabe:</strong> Langue maternelle
                 </li>
                 <li style="margin-bottom: 0.5rem;">
                     <strong style="color: #3498db;">Français:</strong> Intermédiaire
@@ -399,7 +428,7 @@
                     <strong style="color: #3498db;">Anglais:</strong> Intermédiaire
                 </li>
             </ul>
-        </div>
+        </section>
     </div>
 </body>
 
