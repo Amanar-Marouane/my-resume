@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #333;
+    --light-gray: #f5f6fa;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    /* overflow: hidden; */
+}
+
+.container {
+    width: 21cm;
+    /* height: 100vh; */
+    margin: 0 auto;
+    padding: 0;
+    background: white;
+    box-shadow: none;
+    border-radius: 0;
+    /* overflow-y: auto; */
+}
+
+.header {
+    padding: 0.5em 1.5em;
+    background: #fff;
+    color: white;
+    border-radius: 0;
+    color: #333;
+}
+
+.header h1 {
+    transform: translateX(3em);
+    font-size: 24pt;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.header h2 {
+    font-size: 18pt;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+    transform: translateX(-2em);
+}
+
+.contact-info {
+    display: flex;
+    font-size: 10pt;
+    margin-top: .2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.section {
+    padding: 0.5em 1.5em;
+    page-break-inside: avoid;
+    padding-bottom: 0;
+    padding-top: 0.8em;
+}
+
+.section-title {
+    font-size: 14pt;
+    color: var(--primary-color);
+    margin-bottom: 0rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+    margin-left: 1rem;
+}
+
+.skill-category {
+    background: var(--light-gray);
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0.2rem;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 0rem;
+    font-size: 11pt;
+}
+
+.skill-list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.skill-item {
+    background: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 10pt;
+    box-shadow: none;
+}
+
+.education-item,
+.project-item {
+    margin-bottom: .5rem;
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.education-item h3,
+.project-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+    font-size: 12pt;
+}
+
+.education-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    font-size: 10pt;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.titleInLineWithSkills h3 {
+    margin: 0;
+}
+
+.tech-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 9pt;
+}
+
+.titleInLineWithSkills {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+}
+
+.contact-details {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+    print-color-adjust: exact;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        /* height: 100vh; */
+        /* overflow: hidden; */
+    }
+
+    .container {
+        width: 21cm;
+        /* height: 100vh; */
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        /* overflow: hidden; */
+    }
+
+    .header {
+        padding: 0.5em 1.5em;
+    }
+
+    .section {
+        padding: 0.3em 1.5em;
+    }
+
+    .section-title {
+        margin-bottom: 0.3em;
+    }
+
+    .contact-info,
+    .skills-grid {
+        gap: 0.5rem;
+    }
+
+    .section:last-child {
+        page-break-after: avoid;
+    }
+}
